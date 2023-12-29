@@ -125,7 +125,6 @@ img {
 .close {
     float: left;
     margin: 1em 0 0 1em;
-    
 }
 
 .dropdown a:not(:first-child):hover {
