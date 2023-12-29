@@ -32,6 +32,21 @@
     <div class="playlist-container">
         <!-- Playlist items go here -->
         <div class="playlist-item">
+            <div class="dropdown" id="dropdown">
+                <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+                <a href="#">Rename</a>
+                <a href="#">Delete</a>
+                <a href="#">Share</a>
+            </div>
+        
+            <span id="open" class="open" onclick="openNav()">
+                <a href="#" class="nav">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                </a>
+            </span>
+            
             <img src="your_image_url_1.jpg" alt="Playlist Image 1">
             <div class="caption">Caption 1</div>
             <button class="delete-button" onclick="deleteContainer(this)">Delete</button>
@@ -53,17 +68,11 @@
     <script>
         function openNav() {
             // document.getElementById("open").style.display = "none";
-            document.getElementById("one").style.width = "15px";
-            document.getElementById("two").style.width = "10px";
-            document.getElementById("three").style.width = "5px";
             document.getElementById("dropdown").style.width = "100%";
         }
 
         function closeNav() {
             document.getElementById("dropdown").style.width = "0";
-            document.getElementById("one").style.width = "30px";
-            document.getElementById("two").style.width = "20px";
-            document.getElementById("three").style.width = "25px";
             // document.getElementById("open").style.display = "block";
         }
 
