@@ -18,7 +18,7 @@
         <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
         <a href="#">Rename</a>
         <a href="#">Delete</a>
-        <a href="#">Three</a>
+        <a href="#">Share</a>
     </div>
 
     <span id="open" class="open" onclick="openNav()">
@@ -52,13 +52,19 @@
 
     <script>
         function openNav() {
-            document.getElementById("open").style.display = "none";
+            // document.getElementById("open").style.display = "none";
+            document.getElementById("one").style.width = "15px";
+            document.getElementById("two").style.width = "10px";
+            document.getElementById("three").style.width = "5px";
             document.getElementById("dropdown").style.width = "100%";
         }
 
         function closeNav() {
             document.getElementById("dropdown").style.width = "0";
-            document.getElementById("open").style.display = "block";
+            document.getElementById("one").style.width = "30px";
+            document.getElementById("two").style.width = "20px";
+            document.getElementById("three").style.width = "25px";
+            // document.getElementById("open").style.display = "block";
         }
 
         function createNewContainer() {
