@@ -107,5 +107,5 @@ button {
   }
   
   .input:focus {
-    box-shadow: 0 0 0 .15vw skyblue;
+    box-shadow: 0 0 0 .15vw #DEE2FF;
   }
