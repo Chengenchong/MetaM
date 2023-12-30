@@ -12,20 +12,42 @@
 <body>
     <div class="profile-container">
         <header>
-            <h1>Your Music Profile</h1>
+            <form id="profile-form">
+                <div class="user-profile">
+                    <label for="profile-picture-upload" class="profile-picture-label">
+                        <img src="profile-picture.jpg" alt="Profile Picture" id="profile-picture">
+                    </label>
+                    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
+                    <div class="user-info">
+                        <h1>Your Music Profile</h1>
+                        <p>@username</p>
+                    </div>
+                </div>
+            </form>
+            <div class="follow-stats">
+                <p><span id="following-count">500</span> Following</p>
+                <p><span id="followers-count">1000</span> Followers</p>
+            </div>
         </header>
         <section class="bio">
             <p>Welcome to my music world! I love creating and sharing music.</p>
-        </section>
-        <section class="songs">
-            <h2>My Top Songs</h2>
-            <ul>
-                <li>Song 1</li>
-                <li>Song 2</li>
-                <li>Song 3</li>
-            </ul>
-        </section>
-        <!-- Add more sections as needed -->
-    </div>
+        <!-- Add this script at the end of your HTML file -->
+    <script>
+        document.getElementById('profile-picture-upload').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const profilePicture = document.getElementById('profile-picture');
+                    profilePicture.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
