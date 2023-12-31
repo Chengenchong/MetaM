@@ -10,18 +10,27 @@
     <title>Your Music Profile</title>
 </head>
 <body>
+
     <div class="profile-container">
         <header>
             <form id="profile-form">
+                <button type="button" id="edit-profile-btn">Edit Profile</button>
                 <div class="user-profile">
                     <label for="profile-picture-upload" class="profile-picture-label">
                         <img src="profile-picture.jpg" alt="Profile Picture" id="profile-picture">
                     </label>
                     <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
                     <div class="user-info">
-                        <h1>Your Music Profile</h1>
-                        <p>@username</p>
+                        <h1 id="profile-username">Your Music Profile</h1>
+                        <p id="profile-description">Description goes here</p>
                     </div>
+                </div>
+                <div class="edit-profile" id="edit-profile-section">
+                    <label for="username">Edit Username:</label>
+                    <input type="text" id="username" name="username" placeholder="New Username">
+                    <label for="description">Edit Description:</label>
+                    <textarea id="description" name="description" placeholder="New Description"></textarea>
+                    <button type="submit">Save Changes</button>
                 </div>
             </form>
             <div class="follow-stats">
@@ -29,10 +38,50 @@
                 <p><span id="followers-count">1000</span> Followers</p>
             </div>
         </header>
-        <section class="bio">
-            <p>Welcome to my music world! I love creating and sharing music.</p>
-        <!-- Add this script at the end of your HTML file -->
+        <div class="nft-info">
+            <p class="nft-count">42</p>
+            <p class="nft-label">NFTs Collected</p>
+        </div>
+        <div class="buttons-container">
+            <button class="button">Recently Played</button>
+            <button class="button">Download</button>
+            <button class="button">Collect and Like</button>
+            <button class="button">My Friends List</button>
+            <button class="button">Favorite Playlist</button>
+            <button class="button">Message</button>
+        </div>
+        <div class="footer">
+            &copy; 2023 Your Music Profile
+        </div>
+    </div>
+
     <script>
+        const editProfileSection = document.getElementById('edit-profile-section');
+        const editProfileBtn = document.getElementById('edit-profile-btn');
+
+        editProfileBtn.addEventListener('click', function () {
+            editProfileSection.style.display = 'block';
+            editProfileBtn.style.display = 'none';
+        });
+
+        document.getElementById('profile-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const newUsername = document.getElementById('username').value;
+            const newDescription = document.getElementById('description').value;
+
+            const profileUsername = document.getElementById('profile-username');
+            const profileDescription = document.getElementById('profile-description');
+
+            profileUsername.textContent = newUsername;
+            profileDescription.textContent = newDescription;
+
+            // Reset the form and hide the edit section
+            this.reset();
+            editProfileSection.style.display = 'none';
+            editProfileBtn.style.display = 'block';
+        });
+
         document.getElementById('profile-picture-upload').addEventListener('change', function (event) {
             const fileInput = event.target;
             const file = fileInput.files[0];
@@ -49,5 +98,6 @@
             }
         });
     </script>
+
 </body>
 </html>

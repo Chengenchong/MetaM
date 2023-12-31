@@ -6,59 +6,104 @@ body {
     color: #fff;
 }
 
-/* Add styling for the user profile section */
-.user-profile {
-    display: flex;
-    align-items: center;
+.profile-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.user-profile img {
-    border-radius: 50%;
-    width: 80px; /* Adjust as needed */
-    margin-right: 20px;
+header {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
 }
 
-.user-info {
-    color: #fff;
-}
-
-/* Add styling for follow stats */
-.follow-stats {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-/* Add styling for the Edit Profile button */
-.edit-profile button {
+#edit-profile-btn {
     background-color: #4CAF50;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-.edit-profile button:hover {
-    background-color: #45a049;
-}
-
-/* Additional styling for better aesthetics */
-header {
-    background-color: #333;
-    padding: 20px;
-}
-
-/* Add styling for the profile picture upload */
-.profile-picture-label {
+.user-profile {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    cursor: pointer;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.profile-picture-label img {
+.user-profile img {
     border-radius: 50%;
-    width: 80px; /* Adjust as needed */
-    margin-bottom: 5px;
+    width: 120px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info {
+    color: #fff;
+    text-align: left;
+}
+
+.follow-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.follow-stats p {
+    text-align: center;
+}
+
+.nft-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nft-count {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFD700; /* Gold color */
+}
+
+.nft-label {
+    font-size: 18px;
+}
+
+.buttons-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    background-color: #1E90FF; /* Dodger Blue */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #4169E1; /* Royal Blue */
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
 }
