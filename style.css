@@ -21,18 +21,6 @@ header {
     position: relative;
 }
 
-#edit-profile-btn {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
 .user-profile {
     display: flex;
     align-items: center;
@@ -50,6 +38,11 @@ header {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     animation: spin 4s linear infinite;
     overflow: hidden;
+}
+
+.separator {
+    height: 20px; /* Adjust the height as needed for your design */
+    width: 100%; /* Ensures the separator spans the entire width of its container */
 }
 
 .user-info {
