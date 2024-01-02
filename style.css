@@ -30,7 +30,7 @@ header {
     cursor: pointer;
     position: absolute;
     top: 20px;
-    right: 20px;  
+    right: 20px;
 }
 
 .user-profile {
@@ -49,7 +49,7 @@ header {
     margin-right: 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     animation: spin 4s linear infinite;
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    overflow: hidden;
 }
 
 .user-info {
@@ -88,12 +88,14 @@ header {
 }
 
 /* Styles for user options container */
-.user-options-container {
+.user-options-container,
+.slideshow-section {
     display: flex;
     align-items: center;
 }
 
-.option-button {
+.option-button,
+.slideshow-button {
     background-color: #1E90FF;
     color: #fff;
     padding: 10px 20px;
@@ -105,26 +107,8 @@ header {
     margin-bottom: 10px;
 }
 
-/* Additional Style to make the "Edit Profile" button and "Message" button on the same line */
-.user-options-container .option-button {
-    margin-bottom: 10px;
-}
-
 .option-button:hover {
     background-color: #4169E1;
-}
-
-/* Styles for slideshow buttons */
-.slideshow-button {
-    background-color: #FF6347;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    margin-right: 10px;
-    margin-bottom: 10px;
 }
 
 .slideshow-button:hover {

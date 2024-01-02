@@ -29,7 +29,7 @@
                     <input type="text" id="username" name="username" placeholder="New Username">
                     <label for="description">Edit Description:</label>
                     <textarea id="description" name="description" placeholder="New Description"></textarea>
-                    <button type="submit">Save Changes</button>
+                    <button type="button" id="edit-profile-btn">Save Changes</button>
                 </div>
                 <div class="user-options-container" data-section="user-options">
                     <button class="option-button">Edit Profile</button>
@@ -71,8 +71,6 @@
         editProfileBtn.addEventListener('click', function () {
             editProfileSection.style.display = 'block';
             editProfileBtn.style.display = 'none';
-            userOptionsContent.style.display = 'none';
-            slideshowContent.style.display = 'none';
         });
 
         // Event listener for profile picture upload
