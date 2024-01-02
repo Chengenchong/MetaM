@@ -31,6 +31,7 @@ header {
 }
 
 .image-container {
+    position: relative;
     margin-top: 2em;
     margin-right: 1em;
     display: flex;
@@ -117,11 +118,11 @@ img {
 }
 
 .dropdown {
+    position: absolute;
     width: 0;
     overflow-x: hidden;
     height: 55vh;
     z-index: 1;
-    position: fixed;
     background-color: rgba(34,65,93,0.9);
     transition: 0.5s;
     display: block;

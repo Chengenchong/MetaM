@@ -18,14 +18,14 @@
         <!-- Playlist items go here -->
         <div class="playlist-item">
             <div class="image-container">
-                <div class="dropdown" id="dropdown">
-                    <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
-                    <a href="javascript:void(0)" onclick="closeNav()">Rename</a>
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
                     <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
                     <a href="#">Share</a>
                 </div>
             
-                <span id="open" class="open" onclick="openNav()">
+                <span class="open" onclick="openNav(this)">
                     <a href="#" class="nav">
                         <div class="one"></div>
                         <div class="two"></div>
@@ -38,28 +38,60 @@
             <div class="caption">Playlist 1</div>
         </div>
         <div class="playlist-item">
-            <img src="your_image_url_2.jpg" alt="Playlist Image 2">
-            <div class="caption">Caption 2</div>
-            <button class="delete-button" onclick="deleteContainer(this)">Delete</button>
+            <div class="image-container">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
+            
+                <span class="open" onclick="openNav(this)">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="your_image_url_2.jpg" alt="Playlist Image 2">
+            </div>
+            <div class="caption">Playlist 2</div>
         </div>
         <div class="playlist-item">
-            <img src="your_image_url_3.jpg" alt="Playlist Image 3">
-            <div class="caption">Caption 3</div>
-            <button class="delete-button" onclick="deleteContainer(this)">Delete</button>
+            <div class="image-container">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
+            
+                <span class="open" onclick="openNav(this)">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="your_image_url_3.jpg" alt="Playlist Image 3">
+            </div>
+            <div class="caption">Playlist 3</div>
         </div>
     </div>
 
     <button class="create-folder-button" onclick="createNewContainer()">+ Create Playlist</button>
 
     <script>
-        function openNav() {
-            // document.getElementById("open").style.display = "none";
-            document.getElementById("dropdown").style.width = "30vh";
+        function openNav(clickedElement) {
+            const dropdown = clickedElement.parentNode.querySelector('.dropdown');
+            dropdown.style.width = "30vh";
         }
 
-        function closeNav() {
-            document.getElementById("dropdown").style.width = "0";
-            // document.getElementById("open").style.display = "block";
+        function closeNav(clickedElement) {
+            const dropdown = clickedElement.parentNode.parentNode.querySelector('.dropdown');
+            dropdown.style.width = "0";
         }
 
         function createNewContainer() {
