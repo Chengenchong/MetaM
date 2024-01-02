@@ -8,15 +8,16 @@ body {
 
 .profile-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 header {
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    position: relative;
+    text-align: left;
 }
 
 #edit-profile-btn {
@@ -33,16 +34,20 @@ header {
 
 .user-profile {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .user-profile img {
     border-radius: 50%;
     width: 120px;
-    margin-right: 20px;
+    height: 120px;
+    object-fit: cover;
     margin-bottom: 20px;
+    margin-right: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    animation: spin 4s linear infinite;
 }
 
 .user-info {
@@ -52,49 +57,47 @@ header {
 
 .follow-stats {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     margin-top: 10px;
     font-size: 14px;
 }
 
 .follow-stats p {
-    text-align: center;
+    margin: 0 10px;
 }
 
-.nft-info {
+.follow-stats span {
+    white-space: nowrap; /* Ensure "NFTs Collected" stays on the same line */
+}
+
+.edit-profile {
+    display: none;
     margin-top: 20px;
-    text-align: center;
 }
 
-.nft-count {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFD700; /* Gold color */
+.edit-profile label,
+.edit-profile textarea {
+    display: block;
+    margin-bottom: 10px;
 }
 
-.nft-label {
-    font-size: 18px;
-}
-
-.buttons-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-around;
+.edit-profile textarea {
+    height: 80px;
 }
 
 .button {
-    background-color: #1E90FF; /* Dodger Blue */
+    background-color: #1E90FF;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .button:hover {
-    background-color: #4169E1; /* Royal Blue */
+    background-color: #4169E1;
 }
 
 .footer {
@@ -102,8 +105,19 @@ header {
     padding: 20px;
     background-color: #333;
     color: #fff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Hide the edit profile section initially */
+.edit-profile {
+    display: none;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

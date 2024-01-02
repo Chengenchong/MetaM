@@ -7,22 +7,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Your Music Profile</title>
+    <title>Username</title>
 </head>
 <body>
 
     <div class="profile-container">
         <header>
             <form id="profile-form">
-                <button type="button" id="edit-profile-btn">Edit Profile</button>
                 <div class="user-profile">
                     <label for="profile-picture-upload" class="profile-picture-label">
                         <img src="profile-picture.jpg" alt="Profile Picture" id="profile-picture">
                     </label>
                     <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
                     <div class="user-info">
-                        <h1 id="profile-username">Your Music Profile</h1>
-                        <p id="profile-description">Description goes here</p>
+                        <h1 id="profile-username">Username</h1>
+                        <p id="profile-description">Talk more abobut u..</p>
                     </div>
                 </div>
                 <div class="edit-profile" id="edit-profile-section">
@@ -32,27 +31,26 @@
                     <textarea id="description" name="description" placeholder="New Description"></textarea>
                     <button type="submit">Save Changes</button>
                 </div>
+                <button type="button" id="edit-profile-btn">Edit Profile</button>
             </form>
             <div class="follow-stats">
-                <p><span id="following-count">500</span> Following</p>
+                <p><span id="nfts-collected">10</span> NFTs Collected</p>
                 <p><span id="followers-count">1000</span> Followers</p>
+                <p><span id="following-count">500</span> Following</p>
             </div>
         </header>
-        <div class="nft-info">
-            <p class="nft-count">42</p>
-            <p class="nft-label">NFTs Collected</p>
-        </div>
-        <div class="buttons-container">
+        <section class="bio">
+            <p> </p>
+        </section>
+        <section class="buttons">
+            <button class="button">NFTs Collected</button>
+            <button class="button">Upload Album</button>
             <button class="button">Recently Played</button>
+            <button class="button">Favorite</button>
             <button class="button">Download</button>
-            <button class="button">Collect and Like</button>
-            <button class="button">My Friends List</button>
-            <button class="button">Favorite Playlist</button>
+            <button class="button">My Friends</button>
             <button class="button">Message</button>
-        </div>
-        <div class="footer">
-            &copy; 2023 Your Music Profile
-        </div>
+        </section>
     </div>
 
     <script>
@@ -67,8 +65,8 @@
         document.getElementById('profile-form').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const newUsername = document.getElementById('username').value;
-            const newDescription = document.getElementById('description').value;
+            const newUsername = document.getElementById('username').value || "Username";
+            const newDescription = document.getElementById('description').value || "Talk more about you...";
 
             const profileUsername = document.getElementById('profile-username');
             const profileDescription = document.getElementById('profile-description');
