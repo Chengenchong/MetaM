@@ -98,13 +98,16 @@ header {
 .slideshow-button {
     background-color: #1E90FF;
     color: #fff;
-    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
     margin-right: 10px;
     margin-bottom: 10px;
+    width: 150px; /* Set a specific width for the buttons */
+    height: 40px; /* Set a specific height for the buttons */
+    text-decoration: none; /* Remove underline */
+    line-height: 40px; /* Center-align the text vertically */
 }
 
 .option-button:hover {
