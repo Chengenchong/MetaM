@@ -18,6 +18,7 @@ body {
 
 header {
     text-align: left;
+    position: relative;
 }
 
 #edit-profile-btn {
@@ -29,25 +30,26 @@ header {
     cursor: pointer;
     position: absolute;
     top: 20px;
-    right: 20px;
+    right: 20px;  /* Move to the top right corner */
 }
 
 .user-profile {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
 }
 
 .user-profile img {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     margin-bottom: 20px;
     margin-right: 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     animation: spin 4s linear infinite;
+    clip-path: circle(50% at 50% 50%);
 }
 
 .user-info {
@@ -67,7 +69,7 @@ header {
 }
 
 .follow-stats span {
-    white-space: nowrap; /* Ensure "NFTs Collected" stays on the same line */
+    white-space: nowrap;
 }
 
 .edit-profile {
@@ -100,14 +102,6 @@ header {
     background-color: #4169E1;
 }
 
-.footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: #fff;
-    border-radius: 0 0 10px 10px;
-}
-
 /* Hide the edit profile section initially */
 .edit-profile {
     display: none;
@@ -121,3 +115,4 @@ header {
         transform: rotate(360deg);
     }
 }
+
