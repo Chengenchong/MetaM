@@ -105,6 +105,11 @@ header {
     margin-bottom: 10px;
 }
 
+/* Additional Style to make the "Edit Profile" button and "Message" button on the same line */
+.user-options-container .option-button {
+    margin-bottom: 10px;
+}
+
 .option-button:hover {
     background-color: #4169E1;
 }
