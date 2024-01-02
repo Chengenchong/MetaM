@@ -30,6 +30,12 @@ header {
     transform: scale(1.05);
 }
 
+.image-container {
+    margin-top: 2em;
+    margin-right: 1em;
+    display: flex;
+}
+
 img {
     width: 100%;
     height: 200px;
@@ -39,6 +45,7 @@ img {
 .caption {
     padding: 10px;
     text-align: center;
+    color: white;
 }
 
 .create-folder-button {
@@ -66,10 +73,19 @@ img {
     transition: 0.3s;
 }
 
+
+/* old css for menu
 .nav {
     width: 30px;
     display: block;
     margin: 1em 0 0 1em;
+    cursor: pointer;
+} */
+
+.nav {
+    width: 30px;
+    display: block;
+    margin-right: 1em;
     cursor: pointer;
 }
 
@@ -95,7 +111,7 @@ img {
     color: white;
     font-size: 30px;
     float: left;
-    margin: 1em 0 0 1em;
+    margin-left: 1em;
     display: block;
     cursor: pointer;
 }
@@ -103,7 +119,7 @@ img {
 .dropdown {
     width: 0;
     overflow-x: hidden;
-    height: 100vh;
+    height: 55vh;
     z-index: 1;
     position: fixed;
     background-color: rgba(34,65,93,0.9);

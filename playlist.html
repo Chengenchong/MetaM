@@ -13,43 +13,29 @@
     <header>
         <h1>MΞtα'M</h1>
     </header>
-    
-    <div class="dropdown" id="dropdown">
-        <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
-        <a href="#">Rename</a>
-        <a href="#">Delete</a>
-        <a href="#">Share</a>
-    </div>
-
-    <span id="open" class="open" onclick="openNav()">
-        <a href="#" class="nav">
-            <div class="one"></div>
-            <div class="two"></div>
-            <div class="three"></div>
-        </a>
-    </span>
 
     <div class="playlist-container">
         <!-- Playlist items go here -->
         <div class="playlist-item">
-            <div class="dropdown" id="dropdown">
-                <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
-                <a href="#">Rename</a>
-                <a href="#">Delete</a>
-                <a href="#">Share</a>
-            </div>
-        
-            <span id="open" class="open" onclick="openNav()">
-                <a href="#" class="nav">
-                    <div class="one"></div>
-                    <div class="two"></div>
-                    <div class="three"></div>
-                </a>
-            </span>
+            <div class="image-container">
+                <div class="dropdown" id="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav()">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav()">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
             
-            <img src="images/jj lin album cover.jpg" alt="Playlist Image 1">
+                <span id="open" class="open" onclick="openNav()">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="images/jj lin album cover.jpg" alt="Playlist Image 1">
+            </div>
             <div class="caption">Playlist 1</div>
-            <button class="delete-button" onclick="deleteContainer(this)">Delete</button>
         </div>
         <div class="playlist-item">
             <img src="your_image_url_2.jpg" alt="Playlist Image 2">
@@ -68,7 +54,7 @@
     <script>
         function openNav() {
             // document.getElementById("open").style.display = "none";
-            document.getElementById("dropdown").style.width = "100%";
+            document.getElementById("dropdown").style.width = "30vh";
         }
 
         function closeNav() {
@@ -90,10 +76,10 @@
             playlistContainer.appendChild(newContainer);
         }
 
-        function deleteContainer(button) {
+        function deleteContainer(a) {
             // Remove the parent container when the delete button is clicked
             const playlistContainer = document.querySelector('.playlist-container');
-            const containerToDelete = button.parentNode;
+            const containerToDelete = a.parentNode.parentNode.parentNode;
             playlistContainer.removeChild(containerToDelete);
         }
     </script>
