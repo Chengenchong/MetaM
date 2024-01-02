@@ -21,7 +21,7 @@
                     <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
                     <div class="user-info">
                         <h1 id="profile-username">Username</h1>
-                        <p id="profile-description">Talk more abobut u..</p>
+                        <p id="profile-description">Talk more about u..</p>
                     </div>
                 </div>
                 <div class="edit-profile" id="edit-profile-section">
@@ -30,6 +30,18 @@
                     <label for="description">Edit Description:</label>
                     <textarea id="description" name="description" placeholder="New Description"></textarea>
                     <button type="submit">Save Changes</button>
+                </div>
+                <div class="user-options-container" data-section="user-options">
+                    <button class="option-button">👤</button>
+                    <button class="option-button">💬</button>
+                    <button class="option-button">⭐</button>
+                    <button class="option-button">📥</button>
+                    <button class="option-button">...</button>
+                </div>
+                <div class="slideshow-section" id="slideshow-section">
+                    <button class="slideshow-button">NFTs Collected</button>
+                    <button class="slideshow-button">Upload Album</button>
+                    <button class="slideshow-button">Recently Played</button>
                 </div>
                 <button type="button" id="edit-profile-btn">Edit Profile</button>
             </form>
@@ -43,25 +55,47 @@
             <p> </p>
         </section>
         <section class="buttons">
-            <button class="button">NFTs Collected</button>
-            <button class="button">Upload Album</button>
-            <button class="button">Recently Played</button>
-            <button class="button">Favorite</button>
-            <button class="button">Download</button>
-            <button class="button">My Friends</button>
-            <button class="button">Message</button>
+            <!-- Placeholder content for user options -->
+            <div class="user-options-content" id="user-options-content">
+            </div>
+            <!-- Placeholder content for slideshow buttons -->
+            <div class="slideshow-content" id="slideshow-content">
+            </div>
         </section>
     </div>
 
     <script>
         const editProfileSection = document.getElementById('edit-profile-section');
         const editProfileBtn = document.getElementById('edit-profile-btn');
+        const userOptionsContent = document.getElementById('user-options-content');
+        const slideshowContent = document.getElementById('slideshow-content');
 
+        // Event listener for "Edit Profile" button
         editProfileBtn.addEventListener('click', function () {
             editProfileSection.style.display = 'block';
             editProfileBtn.style.display = 'none';
+            userOptionsContent.style.display = 'none';
+            slideshowContent.style.display = 'none';
         });
 
+        // Event listener for profile picture upload
+        document.getElementById('profile-picture-upload').addEventListener('change', function (event) {
+            const fileInput = event.target;
+            const file = fileInput.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const profilePicture = document.getElementById('profile-picture');
+                    profilePicture.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Event listener for form submission
         document.getElementById('profile-form').addEventListener('submit', function (event) {
             event.preventDefault();
 
@@ -80,21 +114,57 @@
             editProfileBtn.style.display = 'block';
         });
 
-        document.getElementById('profile-picture-upload').addEventListener('change', function (event) {
-            const fileInput = event.target;
-            const file = fileInput.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    const profilePicture = document.getElementById('profile-picture');
-                    profilePicture.src = e.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            }
+        // Event listener for user options buttons
+        document.querySelectorAll('.option-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                userOptionsContent.style.display = 'block';
+                slideshowContent.style.display = 'none';
+            });
         });
+
+        // Event listener for slideshow buttons
+        document.querySelectorAll('.slideshow-button').forEach(function(button) {
+            button.addEventListener('click', function() {
+                userOptionsContent.style.display = 'none';
+                slideshowContent.style.display = 'block';
+                if (button.textContent === 'NFTs Collected') {
+                    displayNFTsCollected();
+                }
+            });
+        });
+
+        // Function to display NFTs Collected information
+        function displayNFTsCollected() {
+            const nftsCollectedContent = document.getElementById('slideshow-content');
+            const numberOfNFTs = 5; // Replace with the actual number of NFTs
+            const nftDescriptions = [
+                "NFT 1 Description",
+                "NFT 2 Description",
+                "NFT 3 Description",
+                "NFT 4 Description",
+                "NFT 5 Description"
+            ]; // Replace with actual descriptions
+
+            nftsCollectedContent.innerHTML += `<p>${numberOfNFTs} NFTs Collected</p>`;
+
+            const nftsCollectedDropdown = document.createElement('div');
+            nftsCollectedDropdown.className = 'nfts-collected-dropdown';
+
+            for (let i = 0; i < numberOfNFTs; i++) {
+                const nftItem = document.createElement('div');
+                nftItem.className = 'nft-item';
+
+                // Replace the image source with the actual source
+                nftItem.innerHTML = `
+                    <img src="nft-image-${i + 1}.jpg" alt="NFT ${i + 1}">
+                    <p>${nftDescriptions[i]}</p>
+                `;
+
+                nftsCollectedDropdown.appendChild(nftItem);
+            }
+
+            nftsCollectedContent.appendChild(nftsCollectedDropdown);
+        }
     </script>
 
 </body>
