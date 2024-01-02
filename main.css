@@ -74,15 +74,6 @@ img {
     transition: 0.3s;
 }
 
-
-/* old css for menu
-.nav {
-    width: 30px;
-    display: block;
-    margin: 1em 0 0 1em;
-    cursor: pointer;
-} */
-
 .nav {
     width: 30px;
     display: block;
