@@ -10,9 +10,9 @@
     <title>Sign Up - MetaM</title>
 </head>
 <body>
+    <h1><img src="MtM_prev_ui.png" alt="Sign Up Logo" class="logo"></h1>
+    <div class="word" id="Sign_up"></div>
     <div class="form-container" id="signupForm">
-        <h1><img src="MtM_prev_ui.png" alt="Sign Up Logo" class="logo"></h1>
-        <h2>Sign Up</h2>
         <form action="#" method="post" id="signup">
             <input type="text" name="signup-username" class="input" placeholder="Username" required>
             <input type="email" name="signup-email" class="input" placeholder="Email" required>
@@ -23,6 +23,49 @@
     </div>
     
 
-    <script src="script.js"></script>
+    <script>
+        const words = ['Hello', 'World', 'Example'];
+        const typingSpeed = 50; // Adjust the typing speed in milliseconds
+        const delayAfterTyping = 100; // Adjust the delay after typing in milliseconds
+
+        function typeWord(word, elementId, delay) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+            const element = document.getElementById(elementId);
+            let index = 0;
+
+            function type() {
+                element.textContent = word.slice(0, index);
+                index++;
+
+                if (index <= word.length) {
+                setTimeout(type, typingSpeed);
+                } else {
+                // Word is fully typed, remove the border
+                element.style.borderRight = 'none';
+                resolve(); // Resolve the promise when typing is complete
+                }
+            }
+
+            type();
+            }, delay);
+        });
+        }
+
+        async function startTyping() {
+            await typeWord('Welcome to Meta Music World!', 'Sign_up', delayAfterTyping);
+            
+            // Add more words with appropriate delays as needed
+
+            // Show the signup form after all words are typed and the delay has passed
+            setTimeout(() => {
+                document.getElementById('signupForm').style.display = 'block';
+            }, delayAfterTyping);
+        }
+
+
+        // Start the typing animation
+        startTyping();
+    </script>
 </body>
 </html>

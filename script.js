@@ -10,3 +10,5 @@ document.getElementById('toggleForms').addEventListener('click', function() {
         signupForm.style.display = 'none';
     }
 });
+
+
