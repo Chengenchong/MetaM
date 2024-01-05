@@ -63,7 +63,7 @@ button {
 
 .word {
   position: absolute;
-  top: 30%; /* Adjust the top position as needed */
+  top: 20vh; /* Adjust the top position using viewport height */
   left: 50%;
   transform: translateX(-50%);
   color: #dee2ff;
@@ -71,11 +71,12 @@ button {
   white-space: nowrap;
   border-right: 2px solid #ffffff;
   font-family: 'Afacad', sans-serif;
-  font-size: 25px;  
+  font-size: 3vw; /* Adjust the font size using viewport width */
   font-weight: bold;
   margin-top: auto;
   margin-bottom: 10px;
 }
+
 
 
 #signupForm {
