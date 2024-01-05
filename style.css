@@ -296,5 +296,63 @@ img{
             transform: rotate(360deg);
         }
     }
+}
+@supports (display: grid){
+    .profile{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: repeat(3,auto);
+        grid-column-gap: 3rem;
+        align-items: center;
+    }
 
+    .profile-image{
+        grid-row: 1/-1;
+    }
+
+    .gallery{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+    }
+
+    .profile-image,
+    .profile-user-setting,
+    .pointer-stats,
+    .profile-bio,
+    .gallery-item,
+    .gallery{
+        width: auto;
+        margin: 0;
+    }
+
+    @media (max-width:40rem) {
+        .profile{
+            grid-template-columns: auto 1fr;
+            grid-row-gap: 1.5rem;
+        }
+        
+        .profile-image{
+            grid-row: 1/2;
+        }
+
+        .profile-user-setting{
+            display: grid;
+            grid-template-columns: 1fr auto;
+            grid-gap: 1rem;
+        }
+
+        .profile-edit-btn,
+        .profile-stats,
+        .profile-bio{
+            grid-column: 1/-1;
+        }
+
+        .profile-user-setting,
+        .profile-edit-btn,
+        .profile-setting-btn,
+        .profile-bio,
+        .profile-stats{
+            margin: 0;
+        }
+    }
 }
