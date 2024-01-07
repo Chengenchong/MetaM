@@ -4,175 +4,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
     <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel="stylesheet" href="test.css">
-    <title>Username</title>
+    <title>Profile Page</title>
 </head>
 
 <body>
-
     <div class="profile-container">
         <header>
             <form id="profile-form">
                 <div class="user-profile">
                     <label for="profile-picture-upload" class="profile-picture-label">
-                        <img src="profile-picture.jpg" alt="Profile Picture" id="profile-picture">
+                        <img src="https://ronaldmottram.co.nz/wp-content/uploads/2019/01/default-user-icon-8.jpg" alt="Profile Picture" id="profile-picture">
                     </label>
-                    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
+                    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none;">
                     <div class="user-info">
-                        <h1 id="profile-username">Username</h1>
-                        <p id="profile-description">Talk more about you...</p>
+                        <h1 class="profile-user-name">Username_</h1>
+                        <div class="profile-user-setting">   
+                            <button class="btn profile-edit-btn" id="edit-profile-btn">Edit Profile</button>
+                            <button class="btn profile-share-btn" id="share-profile-btn">Share Profile</button>
+                            <button aria-label="profile settings" class="btn profile-settings-btn">
+                                <i class="fas fa-cog"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <div class="edit-profile" id="edit-profile-section">
-                    <label for="username">Edit Username:</label>
-                    <input type="text" id="username" name="username" placeholder="New Username">
-                    <label for="description">Edit Description:</label>
-                    <textarea id="description" name="description" placeholder="New Description"></textarea>
-                    <button type="button" id="save-profile-changes">Save Changes</button>
-                </div>
-                <div class="user-options-container" data-section="user-options">
-                    <a href="share.html" class="option-button">Share Profile</a>
-                    <button class="option-button" id="edit-profile-btn">Edit Profile</button>
-                    <button class="option-button">...</button>
-                </div>
-                <div class="slider-frame">
-                    <div class="animated-arrow">
-                        <span class="main">
-                            <span class="text">Explore More</span>
-                            <span class="the-arrow -right">
-                                <span class="shaft"></span>
-                            </span>
+
+                <div class="profile-bio" id="profilr-bio-section">
+                    <p>
+                        <span class ="profile-real-name">
+                            <b>Username</b>
                         </span>
-                    </div>
-                    <div class="slide-images">
-                            <div class="img-container">
+                        <p>Talk more about you...</p>
+                    </p>
+                </div>
+
+                <div class="image-slider">
+                    <ul>
+                        <li>
+                            <div class="slider-images">
                                 <img src="https://bandwagon-gig-finder.s3.amazonaws.com/system/tinymce/image/file/2156/content_mceu_47980652711616659911799.jpg">
                             </div>
-                            <div class="img-container">
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
                                 <img src="https://1.bp.blogspot.com/--dbZwNL-YNc/UrMLJl7EygI/AAAAAAAABWw/YmCzg8nc1zU/s400/JayChou.JAY.OpusMuzik.jpg">
                             </div>
-                            <div class="img-container">
-                                <img src="https://media.karousell.com/media/photos/products/2020/6/3/beyond__hong_kong_band_cdvcd_d_1591185289_e21346ba_progressive.jpg">
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                               <img src="https://media.karousell.com/media/photos/products/2020/6/3/beyond__hong_kong_band_cdvcd_d_1591185289_e21346ba_progressive.jpg">
                             </div>
-                    </div>
+                        </li> 
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://cache.umusic.com/_sites/_halo/taylorswift/x5/images/albumcoverart.jpg">
+                            </div>
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://is5-ssl.mzstatic.com/image/thumb/Music112/v4/88/cc/70/88cc70bd-3763-a558-33dd-dbe07c8848d9/5054197302183.jpg/1200x1200bf-60.jpg">
+                            </div>
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://www.lyrical-nonsense.com/wp-content/uploads/2021/08/TWICE-The-Feels.jpg">
+                            </div>
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://cdn.nexus.radio/wp-content/uploads/2021/03/alanwalker-1.jpg">
+                            </div>
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://1.bp.blogspot.com/-1Nfme7Jl5dQ/ThwtczbxEZI/AAAAAAAAAOM/PtlzekVwfmk/s320/Adele+-+21+%2528Official+Album+Cover%2529.jpg">
+                            </div>
+                        </li>
+                        <li class="album">
+                            <div class="slider-images">
+                                <img src="https://www.hypnoticasia.com/wp-content/uploads/2018/11/DrK5vztVYAAfbzU.jpg">
+                            </div>
+                        </li>
+                    </ul>  
                 </div>
+
+                <div class="follow-stats">
+                    <p><span id="nfts-collected">10</span> NFTs Collected</p>
+                    <p><span id="followers-count">1000</span> Followers</p>
+                    <p><span id="following-count">500</span> Following</p>
+                </div>
+
                 <div class="slideshow-section" id="slideshow-section">
                     <button class="slideshow-button">NFTs Collected</button>
                     <button class="slideshow-button">Upload Album</button>
                     <button class="slideshow-button">Recently Played</button>
                 </div>
+
+                <div class="container">
+                    <div class="gallery">
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/72/65/ce/7265ce598ae01f79f38063de66de14f4.jpg" class="gallery-image" alt="">
+                            <div class="gallery-item-info">
+                                <ul>
+                                    <li class="gallery-item-names"><span class="visually-hidden">names </span><i class="fas fa-user-circle"></i></li>
+                                    <li class="gallery-item-descriptions"><span class="visually-hidden">descriptions </span><i class="fas fa-user-astronaut"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/5a/2e/c1/5a2ec135aceafbb2093fa8ede9f002d2.jpg" class="gallery-image" alt="">
+                            <div class="gallery-item-type">
+                                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+                            </div>
+                            <div class="gallery-item-info">
+                                <ul>
+                                    <li class="gallery-item-names"><span class="visually-hidden">names </span><i class="fas fa-user-circle"></i></li>
+                                    <li class="gallery-item-descriptions"><span class="visually-hidden">descriptions </span><i class="fas fa-user-astronaut"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/8b/6e/bd/8b6ebd2b1ffb17bdd1005f9032dbda2b.jpg" class="gallery-image" alt="">
+                            <div class="gallery-item-type">
+                                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+                            </div>
+                            <div class="gallery-item-info">
+                                <ul>
+                                    <li class="gallery-item-names"><span class="visually-hidden">names </span><i class="fas fa-user-circle"></i></li>
+                                    <li class="gallery-item-descriptions"><span class="visually-hidden">descriptions </span><i class="fas fa-user-astronaut"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/6f/ec/55/6fec556bd01052eecea035a84ac8fe21.jpg" class="gallery-image" alt="">
+                            <div class="gallery-item-info">
+                                <ul>
+                                    <li class="gallery-item-names"><span class="visually-hidden">names </span><i class="fas fa-user-circle"></i></li>
+                                    <li class="gallery-item-descriptions"><span class="visually-hidden">descriptions </span><i class="fas fa-user-astronaut"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                    </div>
+                    <!--End of gallery-->
+                    <div class="loader"></div>
+                </div>
             </form>
-            <div class="follow-stats">
-                <p><span id="nfts-collected">10</span> NFTs Collected</p>
-                <p><span id="followers-count">1000</span> Followers</p>
-                <p><span id="following-count">500</span> Following</p>
-            </div>
         </header>
-        <section class="bio">
-            <p> </p>
-        </section>
-        <section class="buttons">
-            <div class="user-options-content" id="user-options-content"></div>
-            <div class="slideshow-content" id="slideshow-content"></div>
-        </section>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const editProfileSection = document.getElementById('edit-profile-section');
-            const userOptionsContent = document.getElementById('user-options-content');
-            const slideshowContent = document.getElementById('slideshow-content');
-            const saveProfileChangesBtn = document.getElementById('save-profile-changes');
+            const sliderContainer = document.querySelector('.slider-container');
+            let imageIndex = 0;
 
-            const profileUsername = document.getElementById('profile-username');
-            const profileDescription = document.getElementById('profile-description');
-
-            function showEditProfileSection() {
-                editProfileSection.style.display = 'block';
-                userOptionsContent.style.display = 'none';
-                slideshowContent.style.display = 'none';
-
-                // Populate the input fields with the current values
-                document.getElementById('username').value = profileUsername.textContent.trim();
-                document.getElementById('description').value = profileDescription.textContent.trim();
+            function nextImage() {
+                imageIndex = (imageIndex + 1) % 3; // Change '3' to the number of images
+                updateSlider();
             }
 
-            function saveProfileChanges() {
-                const newUsername = document.getElementById('username').value || "Username";
-                const newDescription = document.getElementById('description').value || "Talk more about you...";
-
-                profileUsername.textContent = newUsername;
-                profileDescription.textContent = newDescription;
-
-                // Reset the form and hide the edit section
-                document.getElementById('profile-form').reset();
-                editProfileSection.style.display = 'none';
-                userOptionsContent.style.display = 'block'; // Show user options after editing
-                slideshowContent.style.display = 'none';
+            function updateSlider() {
+                const translateValue = -imageIndex * 100 + '%';
+                sliderContainer.style.transform = 'translateX(' + translateValue + ')';
             }
 
-            // Event listener for "Edit Profile" button
-            document.getElementById('edit-profile-btn').addEventListener('click', showEditProfileSection);
-
-            // Event listener for "Save Changes" button
-            saveProfileChangesBtn.addEventListener('click', saveProfileChanges);
-
-            // Event listener for user options buttons
-            document.querySelectorAll('.option-button').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    userOptionsContent.style.display = 'block';
-                    slideshowContent.style.display = 'none';
-                });
+            // Set up interval for automatic sliding (optional)
+            setInterval(nextImage, 3000); // Change '3000' to the desired interval in milliseconds
             });
 
-            // Event listener for slideshow buttons
-            document.querySelectorAll('.slideshow-button').forEach(function (button) {
-                button.addEventListener('click', function () {
-                    userOptionsContent.style.display = 'none';
-                    slideshowContent.style.display = 'block';
-                    if (button.textContent === 'NFTs Collected') {
-                        displayNFTsCollected();
-                    }
-                });
-            });
-
-            // Function to display NFTs Collected information
-            function displayNFTsCollected() {
-            const nftsCollectedContent = document.getElementById('slideshow-content');
-            const numberOfNFTs = 5; // Replace with the actual number of NFTs
-            const nftDescriptions = [
-                "NFT 1 Description",
-                "NFT 2 Description",
-                "NFT 3 Description",
-                "NFT 4 Description",
-                "NFT 5 Description"
-            ]; // Replace with actual descriptions
-
-            nftsCollectedContent.innerHTML += `<p>${numberOfNFTs} NFTs Collected</p>`;
-
-            const nftsCollectedDropdown = document.createElement('div');
-            nftsCollectedDropdown.className = 'nfts-collected-dropdown';
-
-            for (let i = 0; i < numberOfNFTs; i++) {
-                const nftItem = document.createElement('div');
-                nftItem.className = 'nft-item';
-
-                // Replace the image source with the actual source
-                nftItem.innerHTML = `
-                    <img src="nft-image-${i + 1}.jpg" alt="NFT ${i + 1}">
-                    <p>${nftDescriptions[i]}</p>
-                `;
-
-                nftsCollectedDropdown.appendChild(nftItem);
-            }
-
-            nftsCollectedContent.appendChild(nftsCollectedDropdown);
-            }
-        });
     </script>
 
 </body>
