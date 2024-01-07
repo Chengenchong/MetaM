@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="test.css">
+    <title>Username</title>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <header>
+            <form id="profile-form">
+                <div class="user-profile">
+                    <label for="profile-picture-upload" class="profile-picture-label">
+                        <img src="profile-picture.jpg" alt="Profile Picture" id="profile-picture">
+                    </label>
+                    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none">
+                    <div class="user-info">
+                        <h1 id="profile-username">Username</h1>
+                        <p id="profile-description">Talk more about you...</p>
+                    </div>
+                </div>
+                <div class="edit-profile" id="edit-profile-section">
+                    <label for="username">Edit Username:</label>
+                    <input type="text" id="username" name="username" placeholder="New Username">
+                    <label for="description">Edit Description:</label>
+                    <textarea id="description" name="description" placeholder="New Description"></textarea>
+                    <button type="button" id="save-profile-changes">Save Changes</button>
+                </div>
+                <div class="user-options-container" data-section="user-options">
+                    <a href="share.html" class="option-button">Share Profile</a>
+                    <button class="option-button" id="edit-profile-btn">Edit Profile</button>
+                    <button class="option-button">...</button>
+                </div>
+                <div class="slider-frame">
+                    <div class="animated-arrow">
+                        <span class="main">
+                            <span class="text">Explore More</span>
+                            <span class="the-arrow -right">
+                                <span class="shaft"></span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="slide-images">
+                            <div class="img-container">
+                                <img src="https://bandwagon-gig-finder.s3.amazonaws.com/system/tinymce/image/file/2156/content_mceu_47980652711616659911799.jpg">
+                            </div>
+                            <div class="img-container">
+                                <img src="https://1.bp.blogspot.com/--dbZwNL-YNc/UrMLJl7EygI/AAAAAAAABWw/YmCzg8nc1zU/s400/JayChou.JAY.OpusMuzik.jpg">
+                            </div>
+                            <div class="img-container">
+                                <img src="https://media.karousell.com/media/photos/products/2020/6/3/beyond__hong_kong_band_cdvcd_d_1591185289_e21346ba_progressive.jpg">
+                            </div>
+                    </div>
+                </div>
+                <div class="slideshow-section" id="slideshow-section">
+                    <button class="slideshow-button">NFTs Collected</button>
+                    <button class="slideshow-button">Upload Album</button>
+                    <button class="slideshow-button">Recently Played</button>
+                </div>
+            </form>
+            <div class="follow-stats">
+                <p><span id="nfts-collected">10</span> NFTs Collected</p>
+                <p><span id="followers-count">1000</span> Followers</p>
+                <p><span id="following-count">500</span> Following</p>
+            </div>
+        </header>
+        <section class="bio">
+            <p> </p>
+        </section>
+        <section class="buttons">
+            <div class="user-options-content" id="user-options-content"></div>
+            <div class="slideshow-content" id="slideshow-content"></div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const editProfileSection = document.getElementById('edit-profile-section');
+            const userOptionsContent = document.getElementById('user-options-content');
+            const slideshowContent = document.getElementById('slideshow-content');
+            const saveProfileChangesBtn = document.getElementById('save-profile-changes');
+
+            const profileUsername = document.getElementById('profile-username');
+            const profileDescription = document.getElementById('profile-description');
+
+            function showEditProfileSection() {
+                editProfileSection.style.display = 'block';
+                userOptionsContent.style.display = 'none';
+                slideshowContent.style.display = 'none';
+
+                // Populate the input fields with the current values
+                document.getElementById('username').value = profileUsername.textContent.trim();
+                document.getElementById('description').value = profileDescription.textContent.trim();
+            }
+
+            function saveProfileChanges() {
+                const newUsername = document.getElementById('username').value || "Username";
+                const newDescription = document.getElementById('description').value || "Talk more about you...";
+
+                profileUsername.textContent = newUsername;
+                profileDescription.textContent = newDescription;
+
+                // Reset the form and hide the edit section
+                document.getElementById('profile-form').reset();
+                editProfileSection.style.display = 'none';
+                userOptionsContent.style.display = 'block'; // Show user options after editing
+                slideshowContent.style.display = 'none';
+            }
+
+            // Event listener for "Edit Profile" button
+            document.getElementById('edit-profile-btn').addEventListener('click', showEditProfileSection);
+
+            // Event listener for "Save Changes" button
+            saveProfileChangesBtn.addEventListener('click', saveProfileChanges);
+
+            // Event listener for user options buttons
+            document.querySelectorAll('.option-button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    userOptionsContent.style.display = 'block';
+                    slideshowContent.style.display = 'none';
+                });
+            });
+
+            // Event listener for slideshow buttons
+            document.querySelectorAll('.slideshow-button').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    userOptionsContent.style.display = 'none';
+                    slideshowContent.style.display = 'block';
+                    if (button.textContent === 'NFTs Collected') {
+                        displayNFTsCollected();
+                    }
+                });
+            });
+
+            // Function to display NFTs Collected information
+            function displayNFTsCollected() {
+            const nftsCollectedContent = document.getElementById('slideshow-content');
+            const numberOfNFTs = 5; // Replace with the actual number of NFTs
+            const nftDescriptions = [
+                "NFT 1 Description",
+                "NFT 2 Description",
+                "NFT 3 Description",
+                "NFT 4 Description",
+                "NFT 5 Description"
+            ]; // Replace with actual descriptions
+
+            nftsCollectedContent.innerHTML += `<p>${numberOfNFTs} NFTs Collected</p>`;
+
+            const nftsCollectedDropdown = document.createElement('div');
+            nftsCollectedDropdown.className = 'nfts-collected-dropdown';
+
+            for (let i = 0; i < numberOfNFTs; i++) {
+                const nftItem = document.createElement('div');
+                nftItem.className = 'nft-item';
+
+                // Replace the image source with the actual source
+                nftItem.innerHTML = `
+                    <img src="nft-image-${i + 1}.jpg" alt="NFT ${i + 1}">
+                    <p>${nftDescriptions[i]}</p>
+                `;
+
+                nftsCollectedDropdown.appendChild(nftItem);
+            }
+
+            nftsCollectedContent.appendChild(nftsCollectedDropdown);
+            }
+        });
+    </script>
+
+</body>
+</html>
