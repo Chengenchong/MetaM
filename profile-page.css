@@ -48,6 +48,9 @@ header {
 .user-info {
     color: #fff;
     text-align: left;
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center items horizontally */
 }
 
 .follow-stats {
@@ -109,6 +112,39 @@ img{
 .slideshow-album{
     margin-right: 80px;
 }
+
+
+/*dot button*/
+.profile-user-setting {
+    display: flex;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+}
+
+.button {
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    place-items: center;
+    cursor: pointer;
+  }
+  
+  .button > svg {
+    border-radius: inherit;
+    padding: 0.5rem;
+    fill: #000000; /* SVG color */
+    width: 20px; /* default width 32px */
+    height: 38px; /* default height 32px */
+  }
+  
+  .button > svg:active {
+    background-color: rgba(65, 65, 65, 0.5);
+  }
+  
+  .button > svg:not(:active) {
+    animation: fadeOut 0.9s;
+  }
+  
+  
 
 /*image-slider button*/
 .animated-button {
