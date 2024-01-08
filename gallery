@@ -1,0 +1,50 @@
+<div class="container">
+    <br>
+    <div class="gallery">
+        <div class="gallery-item" tabindex="0">
+            <img src="https://i.pinimg.com/564x/72/65/ce/7265ce598ae01f79f38063de66de14f4.jpg" class="gallery-image" alt="">
+            <div class="gallery-item-info">
+                <ul>
+                    <li class="gallery-item-names"><span class="visually-hidden">Names:</span><i class="fas fa-name" aria-hidden="true"></i> 56</li>
+                    <li class="gallery-item-descriptions"><span class="visually-hidden">Descriptions:</span><i class="fas fa-description" aria-hidden="true"></i> 2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="gallery-item" tabindex="0">
+            <img src="https://i.pinimg.com/564x/5a/2e/c1/5a2ec135aceafbb2093fa8ede9f002d2.jpg" class="gallery-image" alt="">
+            <div class="gallery-item-info">
+                <ul>
+                    <li class="gallery-item-names"><span class="visually-hidden">Names:</span><i class="fas fa-name" aria-hidden="true"></i> 89</li>
+                    <li class="gallery-item-descriptions"><span class="visually-hidden">Descriptions:</span><i class="fas fa-description" aria-hidden="true"></i> 5</li>
+                </ul>
+            </div>
+        </div>
+        <div class="gallery-item" tabindex="0">
+            <img src="https://i.pinimg.com/564x/8b/6e/bd/8b6ebd2b1ffb17bdd1005f9032dbda2b.jpg" class="gallery-image" alt="">
+            <div class="gallery-item-type">
+                <span class="visually-hidden">Gallery</span><i class="fas fa-clone" aria-hidden="true"></i>
+            </div>
+            <div class="gallery-item-info">
+                <ul>
+                    <li class="gallery-item-names"><span class="visually-hidden">Names:</span><i class="fas fa-name" aria-hidden="true"></i> 42</li>
+                    <li class="gallery-item-descriptions"><span class="visually-hidden">Descriptions:</span><i class="fas fa-description" aria-hidden="true"></i> 1</li>
+                </ul>
+            </div>
+        </div>
+        <div class="gallery-item" tabindex="0">
+            <img src="https://i.pinimg.com/564x/6f/ec/55/6fec556bd01052eecea035a84ac8fe21.jpg" class="gallery-image" alt="">
+            <div class="gallery-item-type">
+                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+            <div class="gallery-item-info">
+                <ul>
+                    <li class="gallery-item-names"><span class="visually-hidden">Names:</span><i class="fas fa-name" aria-hidden="true"></i> 38</li>
+                    <li class="gallery-item-descriptions"><span class="visually-hidden">Descriptions:</span><i class="fas fa-description" aria-hidden="true"></i> 0</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--End of gallery-->
+    <div class="loader"></div>
+</div>
