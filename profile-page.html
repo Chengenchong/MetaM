@@ -18,7 +18,7 @@
 <body>
     <div class="profile-container">
         <header>
-            <form id="profile-form">
+            <form id="profile-form" onsubmit="return false;">
                 <div class="user-profile">
                     <label for="profile-picture-upload" class="profile-picture-label">
                         <img src="https://ronaldmottram.co.nz/wp-content/uploads/2019/01/default-user-icon-8.jpg" alt="Profile Picture" id="profile-picture">
@@ -142,6 +142,51 @@
                     <!--End of gallery-->
                     <div class="loader"></div>
                 </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                        <ul class="share-list">
+                            <li>
+                                <button id="facebook-btn">
+                                    <i class="fab fa-facebook"></i>
+                                    Share to Facebook
+                                </button>
+                            </li>
+                            <li>
+                                <button id="twitter-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Share to WhatsApp
+                                </button>                                 
+                            </li>
+                            <li>
+                                <button id="twitter-btn">
+                                    <i class="fab fa-twitter"></i>
+                                    Share to Twitter
+                                </button>
+                            </li>
+                            <li>
+                                <button id="email-btn">
+                                    <i class="far fa-envelope"></i>
+                                    Share via Email
+                                </button>
+                            </li>
+                            <li>
+                                <button id="qr-code-btn">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Link
+                                </button>
+                            </li>
+                            <li>
+                                <button id="qr-code-btn">
+                                    <i class="fas fa-qrcode"></i>
+                                    QR Code
+                                </button>
+                            </li>
+                        </ul>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
             </form>
         </header>
     </div>
@@ -186,39 +231,36 @@
             });
 
 
-            // Get the "Share Profile" button
+        
+                
+            // Get the modal element
+            var modal = document.getElementById("shareModal");
+
+            // Get the cancel button inside the modal
+            var cancelButton = modal.querySelector(".cancel-btn");
+
+            // Function to open the modal
+            function openModal() {
+                modal.style.display = "block";
+            }
+
+            // Function to close the modal
+            function closeModal() {
+                modal.style.display = "none";
+            }
+
+            // Show the modal when the cancel button is clicked
+            cancelButton.addEventListener("click", closeModal);
+
+            // You can trigger the modal to open in your code where needed
+            // For example, when clicking a button with id="share-profile-btn"
             var shareProfileBtn = document.getElementById("share-profile-btn");
-            // Add a click event listener to the "Share Profile" button
-            shareProfileBtn.addEventListener("click", function (event) {
-                // Prevent the default form submission behavior
-                event.preventDefault();
-                // Open a new window for sharing the profile
-                var sharePage = window.open("share-profile.html", "_blank");
-                // Pass user information to the new page (replace with actual user information)
-                var username = document.querySelector(".profile-user-name").innerText;
-                var realName = document.querySelector(".profile-real-name b").innerText;
-                var bio = document.getElementById("profile-bio-section").innerText;
-                // Ensure the new page is loaded before attempting to access its content
-                sharePage.onload = function () {
-                    // Access the new page's document and update its content
-                    var sharePageDocument = sharePage.document;
-                    // Example: Update the title of the new page
-                    sharePageDocument.title = "Share " + username + "'s Profile";
-                    // Example: Insert user information into the new page's body
-                    sharePageDocument.body.innerHTML = `
-                        <h1>Shared Profile</h1>
-                        <p><b>Username:</b> ${username}</p>
-                        <p><b>Real Name:</b> ${realName}</p>
-                        <p><b>Bio:</b> ${bio}</p>
-                        <!-- Add more creative elements as needed -->
-                    `;
-                };
-            });
+            shareProfileBtn.addEventListener("click", openModal);
+        
 
 
 
 
-            
         });
     </script>
 
