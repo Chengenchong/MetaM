@@ -69,6 +69,51 @@ img{
     pointer-events: none;
 }
 
+.profile-bio{
+    font-size: 18px;
+}
+
+.profile-real-name{
+    font-weight: 900;
+}
+
+.follow-stats{
+    margin-top: 1em;
+    font-size: 18px;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.slideshow-section{
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    height: 8vh; /* Optional: Set a specific height for the container */
+}
+
+.follow-stats p{
+    margin-right: 110px;
+}
+
+.follow-stats p,
+.followers-count{
+    margin-left: 70px;
+}
+
+.slideshow-collected{
+    margin-right: 80px;
+}
+
+.slideshow-album{
+    margin-right: 80px;
+}
+
+.image-slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*image slider*/
 .image-slider ul{
     list-style-type: none;
@@ -143,18 +188,20 @@ img{
 
 /*gallery*/
 .gallery{
-    display: flex;
-    flex-wrap: wrap;
-    margin:-1rem -1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    margin: -1rem -1rem;
     padding-bottom: 3rem;
 }
 
 .gallery-item{
     position: relative;
-    flex: 1 0 22rem;
-    margin: 1rem;
     color: #fff;
     cursor: pointer;
+    overflow: hidden; /* Ensure that images don't overflow */
+    border-radius: 0.4rem; /* Optional: Add rounded corners */
+    aspect-ratio: 1/1; /* Set the aspect ratio to make items square */
 }
 
 .gallery-item:hover .gallery-item-info,
@@ -212,7 +259,15 @@ img{
     animation: loader 500ms linear infinite;
 }
 
-/*button*/
+/* Spinner Animation */
+
+@keyframes loader {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*profile section button*/
 .profile-user-setting button {
     font-family: PlusJakartaSans, -apple-system, BlinkMacSystemFont, Segoe UI,
       Roboto, Oxygen, Cantarell, Helvetica Neue, Ubuntu, sans-serif;
@@ -238,18 +293,53 @@ img{
     background: #dbdbdbae;
   }
   
+/*arrow button*/
+a.previous,
+a.next {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
 
-/*button*/
+.previous.round,
+.next.round {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next.round {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.round {
+    border-radius: 50%;
+    margin: 0 10px; /* Add margin between buttons and images */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.slider-images img {
+    width: 100%; /* Ensure the image takes the full width of its container */
+    height: auto; /* Maintain the aspect ratio of the image */
+}
+
+
+/*slideshow button*/
 .slideshow-section button {
     position: relative;
     padding: 12px 32px;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 0;
     text-transform: uppercase;
-    color: #000;
-    background-color: #fff;
+    color: #fff;
+    background-color: #2d2d2d;
     border: none;
-    border-radius: 50px;
+    border-radius: 30px;
     overflow: hidden;
     z-index: 1;
     transition: all 0.3s ease-in-out;
@@ -259,7 +349,7 @@ img{
   
   .slideshow-section button:hover {
     transform: scale(1.05);
-    color: #000;
+    color: #fff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   }
   
