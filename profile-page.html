@@ -147,24 +147,19 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sliderContainer = document.querySelector('.slider-container');
-            let imageIndex = 0;
+        // Function to handle profile editing
+        function editProfile() {
+        // Prompt the user for new username and bio
+        const newUsername = prompt("Enter your new Username:", document.getElementById('profile-username').innerText);
+        const newBio = prompt("Talk more about you:", document.getElementById('profile-bio').innerText);
 
-            function nextImage() {
-                imageIndex = (imageIndex + 1) % 3; // Change '3' to the number of images
-                updateSlider();
+            // Update profile information if the user provides input
+            if (newUsername !== null && newBio !== null) {
+                document.getElementById('profile-username').innerText = newUsername;
+                document.getElementById('profile-real-name').innerText = newUsername;
+                document.getElementById('profile-bio').innerText = newBio;
             }
-
-            function updateSlider() {
-                const translateValue = -imageIndex * 100 + '%';
-                sliderContainer.style.transform = 'translateX(' + translateValue + ')';
-            }
-
-            // Set up interval for automatic sliding (optional)
-            setInterval(nextImage, 3000); // Change '3000' to the desired interval in milliseconds
-            });
-
+        }
     </script>
 
 </body>
