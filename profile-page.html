@@ -37,7 +37,7 @@
                     </div>
                 </div>
 
-                <div class="profile-bio" id="profilr-bio-section">
+                <div class="profile-bio" id="profile-bio-section">
                     <p>
                         <span class ="profile-real-name">
                             <b>Username</b>
@@ -147,19 +147,49 @@
     </div>
 
     <script>
-        // Function to handle profile editing
-        function editProfile() {
-        // Prompt the user for new username and bio
-        const newUsername = prompt("Enter your new Username:", document.getElementById('profile-username').innerText);
-        const newBio = prompt("Talk more about you:", document.getElementById('profile-bio').innerText);
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the "Edit Profile" button
+            var editProfileBtn = document.getElementById("edit-profile-btn");
 
-            // Update profile information if the user provides input
-            if (newUsername !== null && newBio !== null) {
-                document.getElementById('profile-username').innerText = newUsername;
-                document.getElementById('profile-real-name').innerText = newUsername;
-                document.getElementById('profile-bio').innerText = newBio;
-            }
-        }
+            // Add a click event listener to the "Edit Profile" button
+            editProfileBtn.addEventListener("click", function (event) {
+                // Prevent the default form submission behavior
+                event.preventDefault();
+
+                // Define an array of elements to update
+                var elementsToUpdate = [
+                    {
+                        selector: ".profile-user-name",
+                        promptText: "Enter your new username:",
+                    },
+                    {
+                        selector: ".profile-real-name",
+                        promptText: "Enter your real name:",
+                    },
+                    {
+                        selector: "#profile-bio-section",
+                        promptText: "Tell us more about yourself:",
+                    },
+                ];
+
+                // Iterate over elements and update them
+                elementsToUpdate.forEach(function (element) {
+                    // Prompt the user for new value
+                    var newValue = prompt(element.promptText, document.querySelector(element.selector).innerText);
+
+                    // Check if the user clicked "Cancel" or entered an empty value
+                    if (newValue !== null && newValue.trim() !== "") {
+                        // Update the displayed value
+                        document.querySelector(element.selector).innerText = newValue;
+
+                        // If the element is the real name, update it in bold
+                        if (element.selector === ".profile-real-name") {
+                            document.querySelector(element.selector).innerHTML = "<b>" + newValue + "</b>";
+                        }
+                    }
+                });
+            });
+        });
     </script>
 
 </body>
