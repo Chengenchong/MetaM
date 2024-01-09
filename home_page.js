@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const nftSets = [
-        ['image/nft.jpg', 'image/nft2.jpg', 'image/nft3.jpg', 'image/nft4.jpg'],
-        ['image/nft5.png', 'image/nft6.jpg', 'image/nft7.jpg', 'image/nft8.jpg'],
-        ['image/nft6.jpg', 'image/nft11.jpg', 'image/nft12.jpg', 'image/nft9.png']
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg'],
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg'],
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg']
     ];
 
     function showNextSet() {
@@ -104,9 +104,9 @@ function updateImagesBasedOnSearch() {
     ];
 
     const nftSets = [
-        ['image/nft.jpg', 'image/nft2.jpg', 'image/nft3.jpg', 'image/nft4.jpg'],
-        ['image/nft5.png', 'image/nft6.jpg', 'image/nft7.jpg', 'image/nft8.jpg'],
-        ['image/nft6.jpg', 'image/nft11.jpg', 'image/nft12.jpg', 'image/nft9.png']
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg'],
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg'],
+        ['image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg', 'image/ariana grande1.jpg']
     ];
 
     const searchKey = localStorage.getItem("searchkey");
