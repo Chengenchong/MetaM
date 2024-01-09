@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MΞtα'M</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>MΞtα'M</h1>
+    </header>
+
+    <div class="playlist-container">
+        <!-- Playlist items go here -->
+        <div class="playlist-item">
+            <div class="image-container" onclick="playlist1.html">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
+            
+                <span class="open" onclick="openNav(this)">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="images/jj lin album cover.jpg" alt="Playlist Image 1">
+            </div>
+            <div class="caption">
+                <a href="playlist1.html">Playlist 1</a>
+            </div>
+        </div>
+        <div class="playlist-item">
+            <div class="image-container">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
+            
+                <span class="open" onclick="openNav(this)">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="images/joker xue album cover.jpeg" alt="Playlist Image 2">
+            </div>
+            <div class="caption">Playlist 2</div>
+        </div>
+        <div class="playlist-item">
+            <div class="image-container">
+                <div class="dropdown">
+                    <a href="javascript:void(0)" class="close" onclick="closeNav(this)">&times;</a>
+                    <a href="javascript:void(0)" onclick="closeNav(this)">Rename</a>
+                    <a href="javascript:void(0)" onclick="deleteContainer(this)">Delete</a>
+                    <a href="#">Share</a>
+                </div>
+            
+                <span class="open" onclick="openNav(this)">
+                    <a href="#" class="nav">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </a>
+                </span>
+                
+                <img src="images/jay chou album cover.jpeg" alt="Playlist Image 3">
+            </div>
+            <div class="caption">Playlist 3</div>
+        </div>
+    </div>
+
+    <button class="create-folder-button" onclick="createNewContainer()">+ Create Playlist</button>
+
+    <script>
+        function openNav(clickedElement) {
+            const dropdown = clickedElement.parentNode.querySelector('.dropdown');
+            dropdown.style.width = "30vh";
+        }
+
+        function closeNav(clickedElement) {
+            const dropdown = clickedElement.parentNode.parentNode.querySelector('.dropdown');
+            dropdown.style.width = "0";
+        }
+
+        function createNewContainer() {
+            // You can add JavaScript logic here to create a new container
+            // For simplicity, let's just clone the first playlist item and append it
+            const playlistContainer = document.querySelector('.playlist-container');
+            const firstPlaylistItem = document.querySelector('.playlist-item');
+            const newContainer = firstPlaylistItem.cloneNode(true);
+            
+            // Clear input values (if any) in the cloned container
+            const inputFields = newContainer.querySelectorAll('input');
+            inputFields.forEach(input => input.value = '');
+
+            playlistContainer.appendChild(newContainer);
+        }
+
+        function deleteContainer(a) {
+            // Remove the parent container when the delete button is clicked
+            const playlistContainer = document.querySelector('.playlist-container');
+            const containerToDelete = a.parentNode.parentNode.parentNode;
+            playlistContainer.removeChild(containerToDelete);
+        }
+    </script>
+</body>
+</html>
