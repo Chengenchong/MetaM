@@ -37,6 +37,27 @@ header {
 }
 
 .image {
+  width: 280px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+
+/* NFT Size adjustments */
+
+.image-nft-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly; /* Adjusted from space-around */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.image-nft {
   width: 250px;
   height: 250px;
   border-radius: 20px;
@@ -46,8 +67,9 @@ header {
 
 
 
-/* Album Arrow buttons */
 
+
+/* Album Arrow buttons */
 
 .arrow-button {
   position: absolute;
@@ -496,6 +518,11 @@ li {
   display: flex;
   align-items: center; /* Align items vertically */
 }
+
+li:hover {
+  background-color: #333; /* Change to your desired darker color on hover */
+}
+
 
 li:last-child {
   border-bottom: none;
