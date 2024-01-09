@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home_style.css">
+    <title>Meta M</title>
+
+    
+</head>
+<body>
+    <header>
+        <a href="home_page.html" class="logo-link">
+            <div class="logo">
+                <img src="image/Meta M Logo.webp" alt="Logo">
+            </div>
+        </a>
+        
+        <div class="searchBox">
+            <input class="searchInput" type="text" name="searchkey" id="searchkey" placeholder="Search something" onkeypress="handleKeyPress(event)">
+        </div>
+        
+        
+
+        <button id="Songbutton" class="btn with-icon" >Songs</button>
+        <button class="btn with-icon">My Playlist</button>
+        <button class="button">
+            <svg viewBox="0 0 16 16" class="bi bi-cart-check" height="24" width="24" xmlns="http://www.w3.org/2000/svg" fill="#fff">
+             <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"></path>
+             <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+           </svg>
+           </button>
+           <div class="line"></div>
+           <button id="btn-message" class="button-message">
+            <div class="content-avatar">
+                <div class="status-user"></div>
+                <div class="avatar">
+                    <svg class="user-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12,12.5c-3.04,0-5.5,1.73-5.5,3.5s2.46,3.5,5.5,3.5,5.5-1.73,5.5-3.5-2.46-3.5-5.5-3.5Zm0-.5c1.66,0,3-1.34,3-3s-1.34-3-3-3-3,1.34-3,3,1.34,3,3,3Z"></path>
+                    </svg>
+                </div>
+            </div>
+            <div class="notice-content">
+                <div class="username">01213921813</div>
+                <div class="lable-message">Spider-Man<span class="number-message"></span></div>
+                <div class="user-id">@Spider-Man</div>
+            </div>
+        </button>
+        
+        <div class="dropdown">
+            <button class="dropdown-btn">&#x2630;</button>
+            <div class="dropdown-content">
+                <button class="dropdown-item" onclick="redirectToSettings()">Settings</button>
+                <button id="logoutButton">Logout</button>
+            </div>
+        </div>
+        
+    </header>
+    
+
+
+    <div class="container">
+
+        <button class="Top-Album">Trending</button>
+        <button class="Top-Album">Featured Album</button>
+        <button class="Top-Album">Trending NFTs</button>
+
+        <div class="image-container">
+            <img src="image/justinbieber.jpg" alt="Image 1" class="image">
+            <img src="image/taylorswift.jpg" alt="Image 2" class="image">
+            <img src="image/weeknd.jpg" alt="Image 3" class="image">
+            <img src="image/kanye west.jpg" alt="Image 4" class="image">
+
+            <button class="arrow-button" id="prev-button">&lt;</button>
+            <button class="arrow-button" id="next-button">&gt;</button>
+        </div>
+        
+    </div>
+
+
+
+    <div class="lists-container">
+    <div class="singer_container">
+      <h1>Top 8 Singers</h1>
+      <ol>
+          <li>
+              <span class="rank">1</span>
+              <img class="profile-icon" src="image/adele.jpg" alt="Adele's Profile Icon">
+              <span class="singer">Adele</span>
+          </li>
+          <li>
+              <span class="rank">2</span>
+              <img class="profile-icon" src="image/ed sheeran.jpg" alt="Ed's Profile Icon">
+              <span class="singer">Ed Sheeran</span>
+          </li>
+          <li>
+              <span class="rank">3</span>
+              <img class="profile-icon" src="image/beyonce.jpg" alt="Beyoncé's Profile Icon">
+              <span class="singer">Beyoncé</span>
+          </li>
+          <li>
+              <span class="rank">4</span>
+              <img class="profile-icon" src="image/taylorswift.jpg" alt="taylorswift's Profile Icon">
+              <span class="singer">Taylor Swift</span>
+          </li>
+          <li>
+              <span class="rank">5</span>
+              <img class="profile-icon" src="image/justinbieber.jpg" alt="justinbieber's Profile Icon">
+              <span class="singer">Justin Bieber</span>
+          </li>
+      
+
+      </ol>
+  </div>
+
+  <div class="singer_container">
+      <h1>Top 8 Songs</h1>
+      <ol>
+          <li>
+              <span class="rank">1</span>
+              <img class="profile-icon" src="image/adele1.jpg" alt="Adele's Profile Icon">
+              <span class="singer">Rolling in the deep -  Adele</span>
+          </li>
+          <li>
+              <span class="rank">2</span>
+              <img class="profile-icon" src="image/ed sheeran1.jpg" alt="Ed's Profile Icon">
+              <span class="singer">Shape of you -  Ed Sheeran</span>
+          </li>
+          <li>
+              <span class="rank">3</span>
+              <img class="profile-icon" src="image/beyonce1.png" alt="Beyoncé's Profile Icon">
+              <span class="singer">Halo -  Beyoncé</span>
+          </li>
+          <li>
+              <span class="rank">4</span>
+              <img class="profile-icon" src="image/taylor2.jpg" alt="taylorswift's Profile Icon">
+              <span class="singer">22 -  Taylor Swift</span>
+          </li>
+          <li>
+              <span class="rank">5</span>
+              <img class="profile-icon" src="image/justinbieber.jpg" alt="justinbieber's Profile Icon">
+              <span class="singer">Baby -  Justin Bieber</span>
+          </li>
+
+      </ol>
+  </div>
+</div>
+
+<div class="container">
+
+    <h1>Exclusive Singer's NFTs </h1>
+
+  <div class="image-nft-container">
+      <img src="image/ariana grande1.jpg" alt="Image 1" class="image-nft">
+      <img src="image/ed sheeran1.jpg" alt="Image 2" class="image-nft">
+      <img src="image/drake1.jpg" alt="Image 3" class="image-nft">
+      <img src="image/adele1.jpg" alt="Image 4" class="image-nft">
+      <img src="image/dua lipa1.jpg" alt="Image 4" class="image-nft">
+
+  </div>
+  
+</div>
+
+<div class="container">
+
+    <h1>Exclusive Singer's NFTs </h1>
+
+  <div class="image-nft-container">
+      <img src="image/ariana grande1.jpg" alt="Image 1" class="image-nft">
+      <img src="image/ed sheeran1.jpg" alt="Image 2" class="image-nft">
+      <img src="image/drake1.jpg" alt="Image 3" class="image-nft">
+      <img src="image/adele1.jpg" alt="Image 4" class="image-nft">
+      <img src="image/dua lipa1.jpg" alt="Image 4" class="image-nft">
+
+  </div>
+  
+</div>
+
+
+<div class="container">
+
+    
+    <h1>Trending in Pop</h1>
+  
+    <div class="image-container">
+        <img src="image/kendrikk.jpg" alt="Image 1" class="image">
+        <img src="image/adele1.jpg" alt="Image 2" class="image">
+        <img src="image/drake1.jpg" alt="Image 3" class="image">
+        <img src="image/ed sheeran1.jpg" alt="Image 4" class="image">
+  
+    </div>
+    
+  </div>
+
+  
+
+  <div class="container">
+
+    <h1>Trending in Hip-Hop</h1>
+  
+    <div class="image-container">
+        <img src="image/kendrikk.jpg" alt="Image 1" class="image">
+        <img src="image/adele1.jpg" alt="Image 2" class="image">
+        <img src="image/drake1.jpg" alt="Image 3" class="image">
+        <img src="image/ed sheeran1.jpg" alt="Image 4" class="image">
+  
+    </div>
+    
+  </div>
+
+  <div class="container">
+
+    <h1>Trending in Hip-Hop</h1>
+  
+    <div class="image-container">
+        <img src="image/kendrikk.jpg" alt="Image 1" class="image">
+        <img src="image/adele1.jpg" alt="Image 2" class="image">
+        <img src="image/drake1.jpg" alt="Image 3" class="image">
+        <img src="image/ed sheeran1.jpg" alt="Image 4" class="image">
+  
+    </div>
+    
+  </div>
+
+
+    
+    <script src="home_page.js"></script>
+</body>
+</html>
+
+
+

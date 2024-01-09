@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatiable" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
+    <link rel="stylesheet" href="profile-page.css">
+    <title>Profile Page</title>
+</head>
+
+<body>
+    <div class="profile-container">
+        <header>
+            <a href="home_page.html" class="logo-link">
+                <div class="logo">
+                    <img src="image/Meta M Logo.webp" alt="Logo">
+                </div>
+            </a>
+            
+            <div class="searchBox">
+                <input class="searchInput" type="text" name="searchkey" id="searchkey" placeholder="Search something" onkeypress="handleKeyPress(event)">
+            </div>
+            
+            
+    
+            <button class="btn with-icon">Songs</button>
+            <button class="btn with-icon">My Playlist</button>
+            
+            
+            <div class="dropdown">
+                <button class="dropdown-btn">&#x2630;</button>
+                <div class="dropdown-content">
+                    <button class="dropdown-item" onclick="redirectToSettings()">Settings</button>
+                    <button id="logoutButton">Logout</button>
+                </div>
+            </div>
+        </header>
+  
+            <form id="profile-form" onsubmit="return false;">
+                <div class="user-profile">
+                    <label for="profile-picture-upload" class="profile-picture-label">
+                        <img src="https://ronaldmottram.co.nz/wp-content/uploads/2019/01/default-user-icon-8.jpg" alt="Profile Picture" id="profile-picture">
+                    </label>
+                    <input type="file" id="profile-picture-upload" accept="image/*" style="display: none;">
+                    <div class="user-info">
+                        <h1 class="profile-user-name">Username_</h1>
+                        <div class="profile-user-setting">
+                            <button class="btn profile-edit-btn" id="edit-profile-btn">Edit Profile</button>
+                            <button class="btn profile-share-btn" id="share-profile-btn">Share</button>
+                            <button class="button">
+                                <svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM128,72a12,12,0,1,0-12-12A12,12,0,0,0,128,72Zm0,112a12,12,0,1,0,12,12A12,12,0,0,0,128,184Z"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-bio" id="profile-bio-section">
+                    <p>
+                        <span class ="profile-real-name">
+                            <b>Username</b>
+                        </span>
+                        <p>Talk more about you...</p>
+                    </p>
+                </div>
+
+                <button id="favbutton" class="animated-button" onclick="window.location.href = 'playlist.html';">
+                    <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                    <span class="text">Favourite List</span>
+                    <span class="circle"></span>
+                    <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+                      ></path>
+                    </svg>
+                </button>
+                <div class="image-slider"> 
+                        <ul>
+                            <li>
+                                <div class="slider-images">
+                                    <img src="https://bandwagon-gig-finder.s3.amazonaws.com/system/tinymce/image/file/2156/content_mceu_47980652711616659911799.jpg">
+                                </div>
+                            </li>
+                            <li class="album">
+                                <div class="slider-images">
+                                <img src="https://media.karousell.com/media/photos/products/2020/6/3/beyond__hong_kong_band_cdvcd_d_1591185289_e21346ba_progressive.jpg">
+                                </div>
+                            </li>
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://is5-ssl.mzstatic.com/image/thumb/Music112/v4/88/cc/70/88cc70bd-3763-a558-33dd-dbe07c8848d9/5054197302183.jpg/1200x1200bf-60.jpg">
+                                </div>
+                            </li>
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://cdn.nexus.radio/wp-content/uploads/2021/03/alanwalker-1.jpg">
+                                </div>
+                            </li>
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://www.hypnoticasia.com/wp-content/uploads/2018/11/DrK5vztVYAAfbzU.jpg">
+                                </div>
+                            </li>   
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://i.pinimg.com/564x/58/8d/f9/588df996afa65adc690aa7803116e651.jpg">
+                                </div>
+                            </li>   
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://upload.wikimedia.org/wikipedia/en/6/65/Jay_Chou_-_Greatest_Works_of_Art.png">
+                                </div>
+                            </li> 
+                            <li class="album">
+                                <div class="slider-images">
+                                    <img src="https://1.bp.blogspot.com/-1Nfme7Jl5dQ/ThwtczbxEZI/AAAAAAAAAOM/PtlzekVwfmk/s320/Adele+-+21+%2528Official+Album+Cover%2529.jpg">
+                                </div>
+                            </li>            
+                        </ul>
+                </div>
+
+                <div class="follow-stats-section">
+                    <br>
+                    <hr class="double-line">
+                    <div class="follow-stats">
+                        <p><span id="nfts-collected">10</span> NFTs Collected</p>
+                        <p><span id="followers-count">1000</span> Followers</p>
+                        <p><span id="following-count">500</span> Following</p>
+                    </div>
+                    <hr class="double-line">
+                </div>
+
+                <div class="slideshow-section" id="slideshow-section">
+                    <button class="slideshow-collected">NFTs Collected</button>
+                    <button class="slideshow-album" id="upload-album-btn">Upload Album</button>
+                    <button class="slideshow-played">Recently Played</button>
+                </div>
+
+                <div class="container">
+                    <br>
+                    <div class="gallery">
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/72/65/ce/7265ce598ae01f79f38063de66de14f4.jpg" class="gallery-image" alt="">
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/5a/2e/c1/5a2ec135aceafbb2093fa8ede9f002d2.jpg" class="gallery-image" alt="">
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/8b/6e/bd/8b6ebd2b1ffb17bdd1005f9032dbda2b.jpg" class="gallery-image" alt="">
+                        </div>
+                        <div class="gallery-item" tabindex="0">
+                            <img src="https://i.pinimg.com/564x/6f/ec/55/6fec556bd01052eecea035a84ac8fe21.jpg" class="gallery-image" alt="">
+                        </div>
+        
+                    </div>
+                    <!--End of gallery-->
+                    <div class="loader"></div>
+                </div>
+
+                <!-- Modal -->
+                <div id="shareModal" class="modal">
+                    <div class="modal-content">
+                        <ul class="share-list">
+                            <li>
+                                <button id="facebook-btn">
+                                    <i class="fab fa-facebook"></i>
+                                    Share to Facebook
+                                </button>
+                            </li>
+                            <li>
+                                <button id="twitter-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Share to WhatsApp
+                                </button>                                 
+                            </li>
+                            <li>
+                                <button id="twitter-btn">
+                                    <i class="fab fa-twitter"></i>
+                                    Share to Twitter
+                                </button>
+                            </li>
+                            <li>
+                                <button id="email-btn">
+                                    <i class="far fa-envelope"></i>
+                                    Share via Email
+                                </button>
+                            </li>
+                            <li>
+                                <button id="qr-code-btn">
+                                    <i class="fas fa-copy"></i>
+                                    Copy Link
+                                </button>
+                            </li>
+                            <li>
+                                <button id="qr-code-btn">
+                                    <i class="fas fa-qrcode"></i>
+                                    QR Code
+                                </button>
+                            </li>
+                        </ul>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+
+                <div id="optionsModal" class="modal">
+                    <div class="modal-content">
+                        <ul class="options-list">
+                            <li>Notifications</li>
+                            <li>Settings</li>
+                            <li>Privacy</li>
+                            <li>Create another profile</li>
+                            <li>Log out</li>
+                        </ul>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+
+
+
+            </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const favorbutton = document.getElementById('favbutton');
+
+                    if (favorbutton) {
+                        favorbutton.addEventListener('click', function () {
+                            window.location.href = 'MetaM-playlist-page/playlist.html';
+                        });
+                    }
+
+        function logout() {
+        // Redirect to login.html
+            window.location.href = 'loginpage.html';
+        }
+
+        const logoutButton = document.getElementById('logoutButton');
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', logout);
+        }
+
+
+
+            // Get the "Edit Profile" button
+            var editProfileBtn = document.getElementById("edit-profile-btn");
+            // Add a click event listener to the "Edit Profile" button
+            editProfileBtn.addEventListener("click", function (event) {
+                // Prevent the default form submission behavior
+                event.preventDefault();
+                // Define an array of elements to update
+                var elementsToUpdate = [
+                    {
+                        selector: ".profile-user-name",
+                        promptText: "Enter your new username:",
+                    },
+                    {
+                        selector: ".profile-real-name",
+                        promptText: "Enter your real name:",
+                    },
+                    {
+                        selector: "#profile-bio-section",
+                        promptText: "Tell us more about yourself:",
+                    },
+                ];
+                // Iterate over elements and update them
+                elementsToUpdate.forEach(function (element) {
+                    // Prompt the user for new value
+                    var newValue = prompt(element.promptText, document.querySelector(element.selector).innerText);
+                    // Check if the user clicked "Cancel" or entered an empty value
+                    if (newValue !== null && newValue.trim() !== "") {
+                        // Update the displayed value
+                        document.querySelector(element.selector).innerText = newValue;
+                        // If the element is the real name, update it in bold
+                        if (element.selector === ".profile-real-name") {
+                            document.querySelector(element.selector).innerHTML = "<b>" + newValue + "</b>";
+                        }
+                    }
+                });
+            });
+
+
+            //Share profile button  
+            // Get the modal element
+            var shareModal = document.getElementById("shareModal");
+            // Get the cancel button inside the modal
+            var cancelShareButton = shareModal.querySelector(".cancel-btn");
+            // Function to open the modal
+            function openShareModal() {
+                shareModal.style.display = "block";
+            }
+            // Function to close the modal
+            function closeShareModal() {
+                shareModal.style.display = "none";
+            }
+            // Show the modal when the cancel button is clicked
+            cancelShareButton.addEventListener("click", closeShareModal);
+            // You can trigger the modal to open in your code where needed
+            // For example, when clicking a button with id="share-profile-btn"
+            var shareProfileBtn = document.getElementById("share-profile-btn");
+            shareProfileBtn.addEventListener("click", openShareModal);
+        
+
+             // Get the "NFTs Collected" button
+             var nftsCollectedBtn = document.getElementById("nfts-collected-btn");
+            // Function to scroll to the gallery section
+            function scrollToGallery() {
+                var gallerySection = document.getElementById("gallery-section");
+                gallerySection.scrollIntoView({ behavior: "smooth" });
+            }
+            // Add a click event listener to the "NFTs Collected" button
+            nftsCollectedBtn.addEventListener("click", scrollToGallery);
+
+
+            // Get the "Upload Album" button
+            var uploadAlbumBtn = document.getElementById("upload-album-btn");
+
+            // Get the album container
+            var albumContainer = document.getElementById("album-container");
+
+            // Add a click event listener to the "Upload Album" button
+            uploadAlbumBtn.addEventListener("click", function () {
+                // Toggle the transform style to show/hide the container with a slide transition
+                albumContainer.style.transform = (albumContainer.style.transform === "translateX(-100%)" || albumContainer.style.transform === "") ? "translateX(0)" : "translateX(-100%)";
+            });
+
+
+
+
+
+        });
+    </script>
+
+</body>
+</html>

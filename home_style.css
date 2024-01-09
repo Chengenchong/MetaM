@@ -1,0 +1,551 @@
+.container h1 {
+  margin-left: 30px;
+  text-align: left;
+}
+
+
+body {
+    background: #030303;
+    margin: 0;
+    padding: 0;
+    font-family: 'Afacad', sans-serif;
+    color: #fff;
+}
+
+header {
+  background: linear-gradient(to bottom, #2D2D2D, transparent);
+  padding: 10px;
+  height: 80px;
+  text-align: left;
+  font-family: 'Afacad', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* Image Album Size adjustments */
+
+.image-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly; /* Adjusted from space-around */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.image {
+  width: 280px;
+  height: 300px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+
+/* NFT Size adjustments */
+
+.image-nft-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly; /* Adjusted from space-around */
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.image-nft {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+
+
+
+
+/* Album Arrow buttons */
+
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  z-index: 1; /* Set a lower z-index for the buttons */
+}
+
+.arrow-button:hover {
+  background-color: #1a1a1a;
+}
+
+#prev-button {
+  left: 10px;
+  margin-right: 120px; /* Add a margin to the right to create space */
+}
+
+#next-button {
+  right: 10px;
+  margin-left: 120px; /* Add a margin to the left to create space */
+}
+
+
+
+/* Button for top album */
+
+
+.Top-Album {
+  margin-left: 10px; 
+  position: relative;
+  width: 130px;
+  height: 40px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all .4s;
+  font-family: 'Afacad', sans-serif;
+}
+
+
+.Top-Album:hover {
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+}
+
+.Top-Album:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f85959,
+   0 8px 0 -4px #39a2db,
+   0 12px 10px -3px #39a2db;
+}
+
+
+/* Meta M Logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 5px; /* Adjust the margin to reduce the gap */
+}
+
+.logo img {
+  width: 200px; /* Adjust the width of the logo */
+  height: 200px; /* Let the height adjust proportionally */
+  max-height: 250px; /* Set a maximum height to prevent excessive growth */
+}
+
+
+/* Search Bar */
+.searchInput {
+  border: 2px solid transparent;
+  width: 45em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #615b5b;
+  border-radius: 10px;
+  transition: all 0.5s;
+  margin-right: 10px;
+  font-family: 'Afacad', sans-serif;
+}
+
+.searchInput:hover,
+.searchInput:focus {
+  border: 2px solid #8c9fb1;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+
+
+
+/* Button for playlist*/
+
+.btn {
+  position: relative;
+  width: 130px;
+  height: 40px;
+  font-size: 1em;
+  cursor: pointer;
+  background-color: #171717;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: all .4s;
+  font-family: 'Afacad', sans-serif;
+  margin-right: 10px;
+}
+
+/* Specific styles for buttons with icon */
+.btn.with-icon::before {
+  content: '\1F3B6'; /* Unicode character for a playlist icon */
+  font-family: 'Afacad', sans-serif; /* You may need to adjust the font */
+  margin-right: 5px; /* Adjust the spacing between icon and text */
+}
+
+.btn:hover {
+  border-radius: 5px;
+  transform: translateY(-10px);
+  box-shadow: 0 7px 0 -2px #f85959,
+   0 15px 0 -4px #39a2db,
+   0 16px 10px -3px #39a2db;
+}
+
+.btn:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f85959,
+   0 8px 0 -4px #39a2db,
+   0 12px 10px -3px #39a2db;
+}
+
+
+/* General Buttons */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #181717;
+  outline: 3px #181717 solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.button .text {
+  color: white;
+  font-weight: 700;
+  font-size: 1em;
+  transition: 400ms;
+}
+
+.button svg path {
+  transition: 400ms;
+}
+
+.button:hover {
+  background-color: transparent;
+}
+
+.button:hover .text {
+  color: #181717;
+}
+
+.button:hover svg path {
+  fill: #181717;
+}
+
+
+
+
+/* Line */
+
+.line {
+  height: 50px;
+  width: 2px;
+  background: #fff; /* Change the line color as needed */
+  margin-left: 10px; /* Adjust the margin to set the distance between the button and the line */
+  margin-right: 20px; /* Add a small gap to the right of the line */
+}
+
+
+/* User Profile  */
+
+#btn-message {
+  --text-color: #000;
+  --bg-color-sup: #d2d2d2;
+  --bg-color: #615b5b;
+  --bg-hover-color: #ffffff;
+  --online-status: #00da00;
+  --font-size: 16px;
+  --btn-transition: all 0.2s ease-out;
+}
+
+.button-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 400 var(--font-size) Helvetica Neue, sans-serif;
+  box-shadow: 0 0 2.17382px rgba(0,0,0,.049),0 1.75px 6.01034px rgba(0,0,0,.07),0 3.63px 14.4706px rgba(0,0,0,.091),0 22px 48px rgba(0,0,0,.14);
+  background-color: var(--bg-color);
+  border-radius: 68px;
+  cursor: pointer;
+  padding: 6px 10px 6px 6px;
+  width: fit-content;
+  height: 40px;
+  border: 0;
+  overflow: hidden;
+  position: relative;
+  transition: var(--btn-transition);
+  margin-right: 10px;
+}
+
+.button-message:hover {
+  height: 56px;
+  padding: 8px 20px 8px 8px;
+  background-color: var(--bg-hover-color);
+  transition: var(--btn-transition);
+}
+
+.button-message:active {
+  transform: scale(0.99);
+}
+
+.content-avatar {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  transition: var(--btn-transition);
+  position: relative;
+}
+
+.button-message:hover .content-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-color-sup);
+}
+
+.user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-user {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  right: 1px;
+  bottom: 1px;
+  border-radius: 50%;
+  outline: solid 2px var(--bg-color);
+  background-color: var(--online-status);
+  transition: var(--btn-transition);
+  animation: active-status 2s ease-in-out infinite;
+}
+
+.button-message:hover .status-user {
+  width: 10px;
+  height: 10px;
+  right: 1px;
+  bottom: 1px;
+  outline: solid 3px var(--bg-hover-color);
+}
+
+.notice-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 8px;
+  text-align: initial;
+  color: var(--text-color);
+}
+
+.username {
+  letter-spacing: -6px;
+  height: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: var(--btn-transition);
+}
+
+.user-id {
+  font-size: 12px;
+  letter-spacing: -6px;
+  height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--btn-transition);
+}
+
+.lable-message {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .username {
+  height: auto;
+  letter-spacing: normal;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .user-id {
+  height: auto;
+  letter-spacing: normal;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .lable-message {
+  height: 0;
+  transform: scaleY(0);
+  transition: var(--btn-transition);
+}
+
+.lable-message, .username {
+  font-weight: 600;
+}
+
+
+
+/* Dropdown menu */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background: none;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #2D2D2D; /* Adjust the background color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  top: 100%; /* Position the dropdown content below the button */
+  right: 0; /* Align the right edge with the button */
+}
+
+.dropdown-content button {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Afacad', sans-serif;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Optional: Add a transition effect for smoother appearance */
+.dropdown-content {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.dropdown-content button:hover {
+  background-color: #444; /* Adjust the hover background color */
+}
+
+
+
+
+/* Singer container */
+.singer_container {
+  flex: 0 0 calc(45% - 15px); /* Adjust the width of each list container */
+  background-color: #171717;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 30px; /* Add some space between the lists */
+  font-family: 'Afacad', sans-serif;
+}
+
+/* Container for both singer lists */
+.lists-container {
+  display: flex;
+  justify-content: space-around; /* Adjust the space between the lists */
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  padding: 20px;
+  margin: 0;
+  background-color: #000000;
+  color: #fff;
+}
+
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Align items vertically in a column */
+}
+
+li {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+li:hover {
+  background-color: #333; /* Change to your desired darker color on hover */
+}
+
+
+li:last-child {
+  border-bottom: none;
+}
+
+.profile-icon {
+  width: 85px; /* Adjust the size as needed */
+  height: 80px;
+  border-radius: 20%;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.rank {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.singer {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+
