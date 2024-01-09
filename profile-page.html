@@ -118,7 +118,7 @@
 
                 <div class="slideshow-section" id="slideshow-section">
                     <button class="slideshow-collected">NFTs Collected</button>
-                    <button class="slideshow-album">Upload Album</button>
+                    <button class="slideshow-album" id="upload-album-btn">Upload Album</button>
                     <button class="slideshow-played">Recently Played</button>
                 </div>
 
@@ -187,6 +187,22 @@
                         <button class="cancel-btn">Cancel</button>
                     </div>
                 </div>
+
+                <div id="optionsModal" class="modal">
+                    <div class="modal-content">
+                        <ul class="options-list">
+                            <li>Notifications</li>
+                            <li>Settings</li>
+                            <li>Privacy</li>
+                            <li>Create another profile</li>
+                            <li>Log out</li>
+                        </ul>
+                        <button class="cancel-btn">Cancel</button>
+                    </div>
+                </div>
+
+
+
             </form>
         </header>
     </div>
@@ -231,32 +247,50 @@
             });
 
 
-        
-                
+            //Share profile button  
             // Get the modal element
-            var modal = document.getElementById("shareModal");
-
+            var shareModal = document.getElementById("shareModal");
             // Get the cancel button inside the modal
-            var cancelButton = modal.querySelector(".cancel-btn");
-
+            var cancelShareButton = shareModal.querySelector(".cancel-btn");
             // Function to open the modal
-            function openModal() {
-                modal.style.display = "block";
+            function openShareModal() {
+                shareModal.style.display = "block";
             }
-
             // Function to close the modal
-            function closeModal() {
-                modal.style.display = "none";
+            function closeShareModal() {
+                shareModal.style.display = "none";
             }
-
             // Show the modal when the cancel button is clicked
-            cancelButton.addEventListener("click", closeModal);
-
+            cancelShareButton.addEventListener("click", closeShareModal);
             // You can trigger the modal to open in your code where needed
             // For example, when clicking a button with id="share-profile-btn"
             var shareProfileBtn = document.getElementById("share-profile-btn");
-            shareProfileBtn.addEventListener("click", openModal);
+            shareProfileBtn.addEventListener("click", openShareModal);
         
+
+             // Get the "NFTs Collected" button
+             var nftsCollectedBtn = document.getElementById("nfts-collected-btn");
+            // Function to scroll to the gallery section
+            function scrollToGallery() {
+                var gallerySection = document.getElementById("gallery-section");
+                gallerySection.scrollIntoView({ behavior: "smooth" });
+            }
+            // Add a click event listener to the "NFTs Collected" button
+            nftsCollectedBtn.addEventListener("click", scrollToGallery);
+
+
+            // Get the "Upload Album" button
+            var uploadAlbumBtn = document.getElementById("upload-album-btn");
+
+            // Get the album container
+            var albumContainer = document.getElementById("album-container");
+
+            // Add a click event listener to the "Upload Album" button
+            uploadAlbumBtn.addEventListener("click", function () {
+                // Toggle the transform style to show/hide the container with a slide transition
+                albumContainer.style.transform = (albumContainer.style.transform === "translateX(-100%)" || albumContainer.style.transform === "") ? "translateX(0)" : "translateX(-100%)";
+            });
+
 
 
 
